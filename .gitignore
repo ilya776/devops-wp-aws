@@ -1,0 +1,15 @@
+# Ignore Terraform state
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+
+# Ignore sensitive or system files
+*.pem
+*.key
+.env
+*.log
+*.swp
+
+# Ignore wp-cli cache
+wp-cli.local.yml
