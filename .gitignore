@@ -13,3 +13,4 @@
 
 # Ignore wp-cli cache
 wp-cli.local.yml
+!/.idea/
