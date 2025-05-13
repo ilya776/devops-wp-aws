@@ -122,7 +122,7 @@ Illia Bilous
 ## ✅ Status
 
 #### ✅ Completed
-#### 🕒 Time spent: approx. 5 hours
+#### 🕒 Time spent: approx. 8 hours
 #### 🧱 Challenges: DB connection order in wp-config.php, RDS setup, Redis ENV management
 
 
