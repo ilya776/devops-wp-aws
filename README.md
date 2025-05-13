@@ -89,6 +89,19 @@ A user account with limited permissions to inspect WordPress admin panel.
 URL:      http://<EC2_PUBLIC_IP>/wp-login.php
 Login:    readonly
 Password: readonly123
+<<<<<<< HEAD
+## 📦 Environment Variables
+
+Example: .env.example
+```bash
+WORDPRESS_DB_NAME=wordpress
+WORDPRESS_DB_USER=admin
+WORDPRESS_DB_PASSWORD=strongpassword
+WORDPRESS_DB_HOST=wordpress-db.xxxxxx.us-east-1.rds.amazonaws.com
+
+WORDPRESS_REDIS_HOST=wordpress-redis.xxxxxx.0001.use1.cache.amazonaws.com
+WORDPRESS_REDIS_PORT=6379
+```
 ## 🧪 Troubleshooting
 
 Problem	Solution
