@@ -10,7 +10,7 @@
 .env
 *.log
 *.swp
-*.xml
 
+# Ignore wp-cli cache
 wp-cli.local.yml
 

@@ -37,6 +37,13 @@ define("WP_REDIS_PORT", getenv("WORDPRESS_REDIS_PORT"));
 define("WP_REDIS_DISABLED", false);
 
 EOF'
+# Install WP-CLI
+curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+chmod +x wp-cli.phar
+mv wp-cli.phar /usr/local/bin/wp
+
+# Create WordPress readonly user
+sudo -u www-data wp user create readonly wpreadonly@example.com --role=editor --user_pass=readonly123 --path=/var/www/html
 
 # Restart Apache
 sudo systemctl restart apache2
