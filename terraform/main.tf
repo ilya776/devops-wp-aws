@@ -2,7 +2,6 @@ provider "aws" {
   region = var.region
 }
 
-# VPC
 resource "aws_vpc" "main" {
   cidr_block           = var.vpc_cidr
   enable_dns_support   = true
@@ -20,7 +19,6 @@ resource "aws_internet_gateway" "igw" {
   }
 }
 
-# Public Subnets
 resource "aws_subnet" "public" {
   count                   = 2
   vpc_id                  = aws_vpc.main.id
@@ -33,7 +31,7 @@ resource "aws_subnet" "public" {
   }
 }
 
-# Private Subnets
+
 resource "aws_subnet" "private" {
   count             = 2
   vpc_id            = aws_vpc.main.id
@@ -45,7 +43,7 @@ resource "aws_subnet" "private" {
   }
 }
 
-# Route Table for public
+
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.main.id
   tags = {
@@ -67,7 +65,7 @@ resource "aws_route_table_association" "public" {
 
 resource "aws_key_pair" "wordpress_key" {
   key_name   = "wordpress-key"
-  public_key = file("~/.ssh/id_rsa.pub") # або шлях до іншого SSH ключа
+  public_key = file("~/.ssh/id_rsa.pub")
 }
 
 resource "aws_security_group" "wordpress_sg" {
@@ -79,7 +77,7 @@ resource "aws_security_group" "wordpress_sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"] # для тесту, потім можна обмежити
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   ingress {
